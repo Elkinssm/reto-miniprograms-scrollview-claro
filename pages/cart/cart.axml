@@ -1,23 +1,42 @@
 <view class="container">
-<view class="rompecabezas">
-  <movable-area style="width: 100%; height: 100%;">
-    <movable-view class="pieza" style="position: absolute; left: 10%; top: 20%; width: 30%; height: 30%; background-color: #F00;">
-    </movable-view>
-    <movable-view class="pieza" style="position: absolute; left: 40%; top: 10%; width: 30%; height: 30%; background-color: #0F0;">
-    </movable-view>
-    <movable-view class="pieza" style="position: absolute; left: 20%; top: 50%; width: 30%; height: 30%; background-color: #00F;">
-    </movable-view>
-  </movable-area>
-</view>
-
-  <view class="items">
-    <view a:for="{{cartItems}}" class="item">
-      <view class="item-image" style="background-image: url({{item.image}})"></view>
-      <view class="item-details">
-        <view class="item-name">{{item.name}}</view>
-        <view class="item-price">{{item.price}}€</view>
-      </view>
+  <view class="page-section">
+    <view a:if="{{mostrarRompecabezas}}" class="page-section-demo">
+      <movable-area>
+        <movable-view data class="piece" x="0" y="0" direction="none">
+          1
+        </movable-view>
+        <movable-view
+          class="piece-2"
+          id="pieza2"
+          x="{{50}}"
+          y="{{50}}"
+          direction="all"
+          onChange="onTouchMove"
+        >
+          2
+        </movable-view>
+        <movable-view class="piece" x="-200" y="200" direction="none">
+          3
+        </movable-view>
+        <movable-view class="piece" x="200" y="200" direction="none">
+          4
+        </movable-view>
+      </movable-area>
     </view>
   </view>
-  <button class="confirmar" onTap="onConfirmarCompra">Confirmar compra</button>
+
+  <view a:if="{{!mostrarRompecabezas}}" class="items">
+    <block a:for="{{cartItems}}" a:key="index">
+      <view class="item">
+        <view class="item-details">
+          <view class="item-name">{{item.name}}</view>
+          <view class="item-price">Precio: ${{item.price}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <button class="confirmar" onTap="onConfirmarCompra">
+    Confirmar compra
+  </button>
 </view>

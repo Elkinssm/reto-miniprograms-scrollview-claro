@@ -11,10 +11,10 @@
         </view>
 
         <view class="cart-item-price">
-          {{item.price}}
+          Precio: ${{item.price}}
         </view>
       </view>
     </block>
   </scroll-view>
-  <button class="btn-puzzle" onTap="startPuzzle">Completar compra</button>
+  <button class="btn-puzzle" onTap="startPuzzle">Ir al carrito de compras</button>
 </view>

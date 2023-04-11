@@ -5,6 +5,8 @@
     "pages/cart/cart"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "Ecommerce",
+    "titleBarColor": "#1abc9c"
+    
   }
 }
