@@ -1,0 +1,23 @@
+<view class="container">
+<view class="rompecabezas">
+  <movable-area style="width: 100%; height: 100%;">
+    <movable-view class="pieza" style="position: absolute; left: 10%; top: 20%; width: 30%; height: 30%; background-color: #F00;">
+    </movable-view>
+    <movable-view class="pieza" style="position: absolute; left: 40%; top: 10%; width: 30%; height: 30%; background-color: #0F0;">
+    </movable-view>
+    <movable-view class="pieza" style="position: absolute; left: 20%; top: 50%; width: 30%; height: 30%; background-color: #00F;">
+    </movable-view>
+  </movable-area>
+</view>
+
+  <view class="items">
+    <view a:for="{{cartItems}}" class="item">
+      <view class="item-image" style="background-image: url({{item.image}})"></view>
+      <view class="item-details">
+        <view class="item-name">{{item.name}}</view>
+        <view class="item-price">{{item.price}}€</view>
+      </view>
+    </view>
+  </view>
+  <button class="confirmar" onTap="onConfirmarCompra">Confirmar compra</button>
+</view>

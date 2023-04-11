@@ -1,0 +1,10 @@
+{
+  "subPackageBuildType": "shared",
+  "pages": [
+    "pages/screen/screen",
+    "pages/cart/cart"
+  ],
+  "window": {
+    "defaultTitle": "My App"
+  }
+}

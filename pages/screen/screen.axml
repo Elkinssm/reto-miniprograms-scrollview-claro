@@ -1,0 +1,20 @@
+<view class="container">
+  <scroll-view scroll-x style="height: 100%">
+    <block a:for="{{ productList }}" a:key="index">
+      <view class="cart-item" onTap="addToCart" data-item-id="{{item.id}}">
+
+        <view class="cart-item-name">
+          {{item.name}}
+        </view>
+        <view class="cart-item-description">
+          {{item.description}}
+        </view>
+
+        <view class="cart-item-price">
+          {{item.price}}
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <button class="btn-puzzle" onTap="startPuzzle">Completar compra</button>
+</view>
